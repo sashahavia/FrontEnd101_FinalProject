@@ -1,0 +1,111 @@
+ /* --Bourbon from CodeKit
+=======================================*/
+@import '../bourbon/bourbon';
+
+/* --settings
+=======================================*/
+@import 'partials/_config';
+@import 'partials/_mixins';
+
+/* --vendor
+=======================================*/
+@import 'partials/_normalizer';
+
+/* --Modules
+=======================================*/
+@import 'partials/_typography';
+@import 'partials/_layout';
+@import 'partials/_animations';
+
+html {
+    background-color: #FFFFFF;
+}
+
+h1 {
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 1px 1px #222222;
+}
+
+h3 {
+	color: rgba(255, 255, 255, 1);
+	font-family: $font-paragraph;
+	font-weight: 900;
+    text-rendering: optimizeLegibility;
+    line-height: 1.2;
+}
+
+.sharedButtonValues {
+	font-size: 16pt;
+	padding: 10px 20px 10px 20px;
+	color: rgba(255, 255, 255, 1);
+	border-radius: 5px;
+	border: 1px solid #FFFFFF;
+	text-transform: uppercase;
+}
+
+#start {
+	margin-top: 40px;
+	background: rgba(255, 255, 255, 0);
+	@extend .sharedButtonValues;
+}
+
+
+
+#enterValues {
+	display: none;
+}
+
+#values_bg {
+	height: 100vh;
+	background-image:	url(../images/values_bg_sm.jpg);
+
+	@media (min-width: $mq-med){
+	 		background: url(../images/values_bg.jpg) no-repeat center center fixed;
+	 		background-opacity: 0.2;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+	 	}
+}
+
+#values {
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	border: solid 1px #666666;
+	border-radius: 5px;
+	font-size: 20pt;
+	position:fixed;
+	top: 40%;
+	left: 0;
+
+    @media (min-width: $mq-small){
+		left: 10%;
+	}
+}
+
+#values label {
+	color: white;
+	text-shadow: 1px 1px #222222;
+	font-weight: 500;
+}
+
+#values input {
+	float: right;
+	cursor:auto;
+	@media (min-width: $mq-small){
+		float: none;
+	}
+}
+
+#values button {
+	margin-top: 0;
+	text-shadow: 1px 1px #222222;
+	font-weight: 500;
+	background: rgba(255, 255, 255, 0);
+	@extend .sharedButtonValues;
+}
+
+.result {
+	display: none;
+}

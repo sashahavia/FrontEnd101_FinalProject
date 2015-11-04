@@ -10,7 +10,75 @@
 </head>
 <body>
 
-	<input>
+<!-- Sect: Banner
+======================================= -->	
+		<section class="sect-banner">
+		 <!--List items for bg images -->
+		 <ul class="kf-slider">
+			  <li></li>
+			  <li></li>
+			  <li></li>
+		 </ul>
+		 <!-- Vertically Center Content -->
+		 <div class="v-center">
+			  <h1>Welcome to Travel with Weather</h1>
+				<h3>Check the weather in both cities at the same time.</h3>
+				<button id="start">Start</button>	
+		 </div>
+		</section>       
+<!-- Google Maps Api Key AIzaSyCOrtYHsE4Lx4ZBbUCIQz4dHFbHEMg5uRg -->
+	<section id="enterValues">
+		<div id="values_bg">
+			<form id="values">
+				<div>
+					<label for="fromCity">From City:</label>
+					<input id="fromCity" type="text">
+					<label for="toCity">To City: </label>
+					<input id="toCity" type="text">
+					<button id="submit">Check Weather</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<div class="row result">
+		<div class="col-md-6 fromCity" id="fromCity">
+			<h2></h2>
+			<div class="icon0">
+				<img src="">
+			</div>
+			<div class="icon1">
+				<img src="">
+			</div>
+			<div class="icon2">
+				<img src="">
+			</div>
+			<div class="icon3">
+				<img src="">
+			</div>
+			<div class="icon4">
+				<img src="">
+			</div>
+		</div>
+  		<div class="col-md-6 toCity" id="toCity">
+  			<h2></h2>
+			<div class="icon0">
+				<img src="">
+			</div>
+			<div class="icon1">
+				<img src="">
+			</div>
+			<div class="icon2">
+				<img src="">
+			</div>
+			<div class="icon3">
+				<img src="">
+			</div>
+			<div class="icon4">
+				<img src="">
+			</div>
+  		</div>
+	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
