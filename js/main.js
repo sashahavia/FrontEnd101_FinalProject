@@ -10,47 +10,13 @@ $(document).ready(function(){
 		$("#enterValues").toggle();
 	});
 
-	function dayOfTheWeek (n) {
-		
-        switch (n) {
-		    case 0:
-		        return day = "Sunday";
-		        break;
-		    case 1:
-		        return day = "Monday";
-		        break;
-		    case 2:
-		        return day = "Tuesday";
-		        break;
-		    case 3:
-		        return day = "Wednesday";
-		        break;
-		    case 4:
-		        return day = "Thursday";
-		        break;
-		    case 5:
-		        return day = "Friday";
-		        break;
-		    case 6:
-		        return day = "Saturday";
-		        break;
-		}
-
-	}
-
-	$("#submit").click(function(event){
-		event.preventDefault();
-		$("#enterValues").toggle();
-		$(".result").toggle();
-		var fromCity = $("#fromCity").val();
-		var toCity = $("#toCity").val();
-
+	function fromCityWeather (fromCity) {
 		$.getJSON(
 			 "http://api.openweathermap.org/data/2.5/forecast/daily",
 			{
 				q: fromCity,
-				cnt: 5,
-				appid: "bd82977b86bf27fb59a04b61b657fb6f",
+				cnt: 7,
+				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 				units: "imperial"
 			},
 			function(response){
@@ -58,6 +24,9 @@ $(document).ready(function(){
 				 // If we don't get data back
                 if(response.cod != 200){
                     alert(response.message);
+                } else {
+                	$("#enterValues").toggle();
+					$(".result").toggle();
                 }
                 var day = [];
                 var weather = [];
@@ -67,7 +36,7 @@ $(document).ready(function(){
                 var icon = "";
                 $(".fromCity h2").html(fromCity);
                 // Save the data in vars
-                for(var i = 0; i < 5; i++){
+                for(var i = 0; i < 7; i++){
                 	weather[i] = response.list[i].weather[0].main;
                 	temp[i] = response.list[i].temp;
                 	day_temp = temp[i].day;
@@ -95,13 +64,15 @@ $(document).ready(function(){
                 
 			}
 		);
+	}
 
+	function toCityWeather (toCity){
 		$.getJSON(
 			"http://api.openweathermap.org/data/2.5/forecast/daily",
 			{
 				q: toCity,
-				cnt: 5,
-				appid: "bd82977b86bf27fb59a04b61b657fb6f",
+				cnt: 7,
+				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 				units: "imperial"
 			},
 			function(response){
@@ -119,7 +90,7 @@ $(document).ready(function(){
                 var icon = "";
                 $(".toCity h2").html(toCity);
                 // Save the data in vars
-                for(var i = 0; i < 5; i++){
+                for(var i = 0; i < 7; i++){
                 	weather[i] = response.list[i].weather[0].main;
                 	temp[i] = response.list[i].temp;
                 	day2[i] = dayOfTheWeek(n);
@@ -150,5 +121,43 @@ $(document).ready(function(){
 
 			}
 		);
+	}
+
+	function dayOfTheWeek (n) {
+		
+        switch (n) {
+		    case 0:
+		        return day = "Sunday";
+		        break;
+		    case 1:
+		        return day = "Monday";
+		        break;
+		    case 2:
+		        return day = "Tuesday";
+		        break;
+		    case 3:
+		        return day = "Wednesday";
+		        break;
+		    case 4:
+		        return day = "Thursday";
+		        break;
+		    case 5:
+		        return day = "Friday";
+		        break;
+		    case 6:
+		        return day = "Saturday";
+		        break;
+		}
+
+	}
+
+	$("#submit").click(function(event){
+		event.preventDefault();
+		var fromCity = $("#fromCity").val();
+		var toCity = $("#toCity").val();
+
+		fromCityWeather (fromCity);
+		toCityWeather (toCity);
+		
 	});
 });
