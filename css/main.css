@@ -731,7 +731,7 @@ h1 {
 h3 {
   color: white;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
   line-height: 1.2; }
 
@@ -745,7 +745,8 @@ h3 {
 
 #start {
   margin-top: 40px;
-  background: rgba(255, 255, 255, 0); }
+  background: rgba(255, 255, 255, 0);
+  font-weight: 300; }
 
 #enterValues {
   display: none; }
@@ -763,10 +764,10 @@ h3 {
       background-size: cover; } }
 
 #values {
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border: solid 1px #666666;
-  border-radius: 5px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: solid 1px #999999;
+  border-radius: 10px;
   font-size: 20pt;
   position: fixed;
   top: 40%;
@@ -778,11 +779,12 @@ h3 {
 #values label {
   color: white;
   text-shadow: 1px 1px #222222;
-  font-weight: 500; }
+  font-weight: 300; }
 
 #values input {
   float: right;
-  cursor: auto; }
+  cursor: auto;
+  font-weight: 300; }
   @media (min-width: 36em) {
     #values input {
       float: none; } }
@@ -790,10 +792,45 @@ h3 {
 #values button {
   margin-top: 0;
   text-shadow: 1px 1px #222222;
-  font-weight: 500;
+  font-weight: 300;
   background: rgba(255, 255, 255, 0); }
 
 .result {
-  display: none; }
+  display: none;
+  height: 100vh;
+  background-image: url(../images/values_bg_sm.jpg); }
+  @media (min-width: 58em) {
+    .result {
+      background: url(../images/slider2_bg.jpg) no-repeat center center fixed;
+      background-opacity: 0.2;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; } }
+
+#toCity h2,
+#fromCity h2 {
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 400;
+  text-shadow: 1px 1px #222222;
+  margin-bottom: 10px; }
+
+.icon0, .icon1, .icon2,
+.icon3, .icon4, .icon5,
+.icon6 {
+  float: left;
+  width: 14%;
+  border: 1px solid #888888;
+  border-radius: 10px;
+  background: white; }
+
+.icon0 p, .icon1 p, .icon2 p,
+.icon3 p, .icon4 p, .icon5 p,
+.icon6 p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 90%; }
 
 /*# sourceMappingURL=main.css.map */

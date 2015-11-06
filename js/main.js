@@ -17,7 +17,7 @@ $(document).ready(function(){
 				q: fromCity,
 				cnt: 7,
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
-				units: "imperial"
+				units: "Imperial"
 			},
 			function(response){
 				console.log(response);
@@ -34,7 +34,8 @@ $(document).ready(function(){
                 var iconUrl = "";
                 var iconName = "";
                 var icon = "";
-                $(".fromCity h2").html(fromCity);
+
+                $("#fromCity h2").html(fromCity);
                 // Save the data in vars
                 for(var i = 0; i < 7; i++){
                 	weather[i] = response.list[i].weather[0].main;
@@ -53,27 +54,35 @@ $(document).ready(function(){
 					console.log(icon);
 					console.log(iconName);
 					console.log(iconUrl);
+					if(i === 0){
+						$("#fromCity " + iconName + " p").html("NOW");
+					} else {
+						$("#fromCity " + iconName + " p").html(day[i]);
+					}
 					$("#fromCity " + iconName + " img").attr("src" , iconUrl);
-					
+					$("#fromCity " + iconName + " #day").html("Day:   " + day_temp.toFixed(0) + "&#176;");
+					$("#fromCity " + iconName + " #night").html("Night: " + night_temp.toFixed(0)+ "&#176;");
 	                console.log(weather[i]);
 	                console.log(day_temp);
 	                console.log(night_temp);
 	                console.log(day[i]);
                 }
-                n = 0;
-                
+                n = 0; 
 			}
+			 
 		);
+		
 	}
 
 	function toCityWeather (toCity){
+		
 		$.getJSON(
 			"http://api.openweathermap.org/data/2.5/forecast/daily",
 			{
 				q: toCity,
 				cnt: 7,
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
-				units: "imperial"
+				units: "Imperial"
 			},
 			function(response){
 				console.log(response);
@@ -88,7 +97,10 @@ $(document).ready(function(){
                 var iconUrl = "";
                 var iconName = "";
                 var icon = "";
-                $(".toCity h2").html(toCity);
+                var toLon = "";
+				var toLat = "";
+                $("#toCity h2").html(toCity);
+                
                 // Save the data in vars
                 for(var i = 0; i < 7; i++){
                 	weather[i] = response.list[i].weather[0].main;
@@ -109,17 +121,22 @@ $(document).ready(function(){
 					console.log(icon);
 					console.log(iconName);
 					console.log(iconUrl);
+					if(i === 0){
+						$("#toCity " + iconName + " p").html("NOW");
+					} else {
+						$("#toCity " + iconName + " p").html(day2[i]);
+					}
 					$("#toCity " + iconName + " img").attr("src" , iconUrl);
-					
-
+					$("#toCity " + iconName + " #day").html("Day: " + day_temp.toFixed(0)+ "&#176;");
+					$("#toCity " + iconName + " #night").html("Night: " + night_temp.toFixed(0)+ "&#176;");
 	                console.log(weather[i]);
 	                console.log(day_temp);
 	                console.log(night_temp);
 	                console.log(day2[i]);
                 }
-
-
+                
 			}
+			
 		);
 	}
 
@@ -127,25 +144,25 @@ $(document).ready(function(){
 		
         switch (n) {
 		    case 0:
-		        return day = "Sunday";
+		        return day = "SUN";
 		        break;
 		    case 1:
-		        return day = "Monday";
+		        return day = "MON";
 		        break;
 		    case 2:
-		        return day = "Tuesday";
+		        return day = "TUE";
 		        break;
 		    case 3:
-		        return day = "Wednesday";
+		        return day = "WED";
 		        break;
 		    case 4:
-		        return day = "Thursday";
+		        return day = "THU";
 		        break;
 		    case 5:
-		        return day = "Friday";
+		        return day = "FRI";
 		        break;
 		    case 6:
-		        return day = "Saturday";
+		        return day = "SAT";
 		        break;
 		}
 
@@ -155,7 +172,6 @@ $(document).ready(function(){
 		event.preventDefault();
 		var fromCity = $("#fromCity").val();
 		var toCity = $("#toCity").val();
-
 		fromCityWeather (fromCity);
 		toCityWeather (toCity);
 		
