@@ -26,7 +26,7 @@ $(document).ready(function(){
                     alert(response.message);
                 } else {
                 	$("#enterValues").toggle();
-					$(".result").toggle();
+					$("#result").toggle();
                 }
                 var day = [];
                 var weather = [];
@@ -51,9 +51,9 @@ $(document).ready(function(){
                 	iconUrl = "images/icons/" + response.list[i].weather[0].icon + ".png";
                 	icon = response.list[i].weather[0].icon;
 					iconName = ".icon" + i;
-					console.log(icon);
-					console.log(iconName);
-					console.log(iconUrl);
+					// console.log(icon);
+					// console.log(iconName);
+					// console.log(iconUrl);
 					if(i === 0){
 						$("#fromCity " + iconName + " p").html("NOW");
 					} else {
@@ -62,10 +62,10 @@ $(document).ready(function(){
 					$("#fromCity " + iconName + " img").attr("src" , iconUrl);
 					$("#fromCity " + iconName + " #day").html("Day:   " + day_temp.toFixed(0) + "&#176;");
 					$("#fromCity " + iconName + " #night").html("Night: " + night_temp.toFixed(0)+ "&#176;");
-	                console.log(weather[i]);
-	                console.log(day_temp);
-	                console.log(night_temp);
-	                console.log(day[i]);
+	                // console.log(weather[i]);
+	                // console.log(day_temp);
+	                // console.log(night_temp);
+	                // console.log(day[i]);
                 }
                 n = 0; 
 			}
@@ -118,9 +118,9 @@ $(document).ready(function(){
                 	iconUrl = "images/icons/" + response.list[i].weather[0].icon + ".png";
                 	icon = response.list[i].weather[0].icon;
 					iconName = ".icon" + i;
-					console.log(icon);
-					console.log(iconName);
-					console.log(iconUrl);
+					// console.log(icon);
+					// console.log(iconName);
+					// console.log(iconUrl);
 					if(i === 0){
 						$("#toCity " + iconName + " p").html("NOW");
 					} else {
@@ -129,10 +129,10 @@ $(document).ready(function(){
 					$("#toCity " + iconName + " img").attr("src" , iconUrl);
 					$("#toCity " + iconName + " #day").html("Day: " + day_temp.toFixed(0)+ "&#176;");
 					$("#toCity " + iconName + " #night").html("Night: " + night_temp.toFixed(0)+ "&#176;");
-	                console.log(weather[i]);
-	                console.log(day_temp);
-	                console.log(night_temp);
-	                console.log(day2[i]);
+	                // console.log(weather[i]);
+	                // console.log(day_temp);
+	                // console.log(night_temp);
+	                // console.log(day2[i]);
                 }
                 
 			}
@@ -168,12 +168,45 @@ $(document).ready(function(){
 
 	}
 
+	function initialize(lon,lat) {
+		console.log(lon + "," + lat);
+		var mapProp = {
+			center:new google.maps.LatLng(lon,lat),
+			zoom:5,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		}
+				
+
 	$("#submit").click(function(event){
 		event.preventDefault();
 		var fromCity = $("#fromCity").val();
 		var toCity = $("#toCity").val();
 		fromCityWeather (fromCity);
 		toCityWeather (toCity);
+
+		var fromLon = "";
+		var fromLat = "";
+
+		$.getJSON(
+			"http://api.openweathermap.org/data/2.5/weather",
+			{
+				q: toCity,
+				appid: "4222d4e937e261a81e1d84fa1e3f669c",
+			},
+			function(data){
+				fromLon = data.coord.lon;
+				fromLat = data.coord.lat;
+				console.log(fromLat + " " + fromLon);
+				initialize (fromLat, fromLon);	
+			}
+			
+		);
 		
+		google.maps.event.addDomListener(window, 'load', initialize);
+
 	});
+
+
 });

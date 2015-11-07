@@ -795,12 +795,12 @@ h3 {
   font-weight: 300;
   background: rgba(255, 255, 255, 0); }
 
-.result {
+#result {
   display: none;
   height: 100vh;
   background-image: url(../images/values_bg_sm.jpg); }
   @media (min-width: 58em) {
-    .result {
+    #result {
       background: url(../images/slider2_bg.jpg) no-repeat center center fixed;
       background-opacity: 0.2;
       -webkit-background-size: cover;
@@ -832,5 +832,9 @@ h3 {
   text-align: center;
   font-weight: 400;
   font-size: 90%; }
+
+#googleMap {
+  margin-top: 20px;
+  border-radius: 15px; }
 
 /*# sourceMappingURL=main.css.map */
