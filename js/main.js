@@ -168,15 +168,27 @@ $(document).ready(function(){
 
 	}
 
-	function initialize(lon,lat) {
-		console.log(lon + "," + lat);
-		var mapProp = {
-			center:new google.maps.LatLng(lon,lat),
-			zoom:5,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-		};
-		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-		}
+	// function initialize(fromCoord, toCoord) {
+		
+		
+	// 	var mapProp = {
+	// 		center: fromCoord,
+	// 	  	zoom:4,
+	// 	  	mapTypeId:google.maps.MapTypeId.ROADMAP
+	// 	};
+  
+	// 	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+	// 	var myTrip=[fromCoord,toCoord];
+	// 	var flightPath=new google.maps.Polyline({
+ //  			path:myTrip,
+ //  			strokeColor:"#000000",
+ //  			strokeOpacity:0.8,
+ //  			strokeWeight:1
+ //  		});
+
+	// 	flightPath.setMap(map);
+	// }
 				
 
 	$("#submit").click(function(event){
@@ -185,9 +197,30 @@ $(document).ready(function(){
 		var toCity = $("#toCity").val();
 		fromCityWeather (fromCity);
 		toCityWeather (toCity);
-
 		var fromLon = "";
 		var fromLat = "";
+		var toLon = "";
+		var toLat = "";
+		
+		var toCoord = "";
+
+
+		$.getJSON(
+			"http://api.openweathermap.org/data/2.5/weather",
+			{
+				q: fromCity,
+				appid: "4222d4e937e261a81e1d84fa1e3f669c",
+			},
+			function(data){
+				fromLon = data.coord.lon;
+				fromLat = data.coord.lat;
+				var coord = fromLon + "," + fromLat;
+				console.log(coord);
+				
+			}
+		);
+
+		
 
 		$.getJSON(
 			"http://api.openweathermap.org/data/2.5/weather",
@@ -196,15 +229,13 @@ $(document).ready(function(){
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 			},
 			function(data){
-				fromLon = data.coord.lon;
-				fromLat = data.coord.lat;
-				console.log(fromLat + " " + fromLon);
-				initialize (fromLat, fromLon);	
+				toLon = data.coord.lon;
+				toLat = data.coord.lat;
+				var coord = toLon + "," + toLat;
+				console.log(coord);
 			}
-			
 		);
-		
-		google.maps.event.addDomListener(window, 'load', initialize);
+		// google.maps.event.addDomListener(window, 'load', initialize);
 
 	});
 
