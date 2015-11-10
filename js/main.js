@@ -168,27 +168,50 @@ $(document).ready(function(){
 
 	}
 
-	// function initialize(fromCoord, toCoord) {
+	// Get distance between two points
+	
+	function distance(lat1, lon1, lat2, lon2) {
+	  	var p = 0.017453292519943295;    // Math.PI / 180
+	 	var c = Math.cos;
+	  	var a = 0.5 - c((lat2 - lat1) * p)/2 + 
+	          c(lat1 * p) * c(lat2 * p) * 
+	          (1 - c((lon2 - lon1) * p))/2;
+
+	  	var result = 7918 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
+	  	$("#distance").html("Your travel distance is " + result.toFixed(2) + " miles.");
+	}
+
+	// set map values based on weather API data
+
+	function setMapPoints (fromLon,fromLat, toLon, toLat){
+		console.log(fromLon + " " + fromLat);
+		console.log(toLon + " " + toLat);
+		var from = new google.maps.LatLng(fromLat,fromLon);
+		var to = new google.maps.LatLng(toLat, toLon);
+		distance(fromLat,fromLon, toLat, toLon);
+		initialize(from , to);
+	}
+	// map function
+	function initialize(fromC, toC) {
 		
-		
-	// 	var mapProp = {
-	// 		center: fromCoord,
-	// 	  	zoom:4,
-	// 	  	mapTypeId:google.maps.MapTypeId.ROADMAP
-	// 	};
+		var mapProp = {
+			center: fromC,
+		  	zoom: 4,
+		  	mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
   
-	// 	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-	// 	var myTrip=[fromCoord,toCoord];
-	// 	var flightPath=new google.maps.Polyline({
- //  			path:myTrip,
- //  			strokeColor:"#000000",
- //  			strokeOpacity:0.8,
- //  			strokeWeight:1
- //  		});
+		var myTrip=[fromC,toC];
+		var flightPath = new google.maps.Polyline({
+  			path:myTrip,
+  			strokeColor:"#44567F",
+  			strokeOpacity:0.8,
+  			strokeWeight:2
+  		});
 
-	// 	flightPath.setMap(map);
-	// }
+		flightPath.setMap(map);
+	}
 				
 
 	$("#submit").click(function(event){
@@ -201,9 +224,8 @@ $(document).ready(function(){
 		var fromLat = "";
 		var toLon = "";
 		var toLat = "";
-		
-		var toCoord = "";
-
+		var fCoord;
+		var tCoord;
 
 		$.getJSON(
 			"http://api.openweathermap.org/data/2.5/weather",
@@ -214,13 +236,15 @@ $(document).ready(function(){
 			function(data){
 				fromLon = data.coord.lon;
 				fromLat = data.coord.lat;
-				var coord = fromLon + "," + fromLat;
-				console.log(coord);
+				console.log(fromLon);
+				// if tCoord has already been initialized
+				if(toLat & toLon) {
+					google.maps.event.addDomListener(window, 'load', initialize);
+                    setMapPoints (fromLon,fromLat, toLon, toLat);
+                }
 				
 			}
 		);
-
-		
 
 		$.getJSON(
 			"http://api.openweathermap.org/data/2.5/weather",
@@ -231,11 +255,15 @@ $(document).ready(function(){
 			function(data){
 				toLon = data.coord.lon;
 				toLat = data.coord.lat;
-				var coord = toLon + "," + toLat;
-				console.log(coord);
+				console.log(toLon);
+				if(fromLat & fromLon) {
+                    setMapPoints (fromLon,fromLat, toLon, toLat);
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                }
 			}
 		);
-		// google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 	});
 

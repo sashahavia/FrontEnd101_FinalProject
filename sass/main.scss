@@ -17,6 +17,10 @@
 @import 'partials/_layout';
 @import 'partials/_animations';
 
+/* --Story
+=======================================*/
+@import '_story';
+
 html {
     background-color: #FFFFFF;
 }
@@ -153,8 +157,20 @@ h3 {
 	font-size: 90%;
 }
 
-#googleMap {
-	margin-top: 20px;;
-	border-radius: 15px;
+#distance {
+	margin-top: 10px;
+	font-size: 1.625em;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 1px 1px #222222;
+	text-align: center;
 
 }
+
+#googleMap {
+	margin-top: 10px;
+	border-radius: 15px;
+}
+
+// Settings fixed position
+
+

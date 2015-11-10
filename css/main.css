@@ -12,6 +12,9 @@
 --Colors
 -----------------------------------------------  */
 /*----------------------------------------------   
+--Story
+-----------------------------------------------  */
+/*----------------------------------------------   
 --Banner Bgs
 -----------------------------------------------  */
 /*----------------------------------------------   
@@ -721,6 +724,114 @@ footer {
     background-image: url(../images/summer2.jpg); }
   100% {
     background-image: url(../images/rainy.jpg); } }
+/* --Story
+=======================================*/
+.sharedHeight, .intro, #intro, .spring, #spring, .summer, #summer, .fall, #fall, .winter, #winter, .end, #end {
+  height: 680px;
+  background-attachment: fixed;
+  text-align: center;
+  position: relative; }
+
+.sharedText, #introText h2, #springText h2, #summerText h2, #fallText h2, #winterText h2, #endText h2 {
+  font-weight: 400;
+  font-size: 18pt;
+  line-height: 50px; }
+  @media (min-width: 58em) {
+    .sharedText, #introText h2, #springText h2, #summerText h2, #fallText h2, #winterText h2, #endText h2 {
+      font-size: 30pt; } }
+  @media (min-width: 1280px) {
+    .sharedText, #introText h2, #springText h2, #summerText h2, #fallText h2, #winterText h2, #endText h2 {
+      font-size: 40pt; } }
+
+.intro {
+  background-image: url(../images/story/intro_bg.jpg); }
+
+#intro {
+  background-image: url(../images/story/intro_snow1.png); }
+
+#introText {
+  position: relative;
+  top: 40%; }
+
+#introText h2 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000; }
+
+#introText p {
+  color: #FFFFFF;
+  font-weight: 400;
+  text-shadow: 2px 2px #000000; }
+
+.spring {
+  background-image: url(../images/story/spring_bg.jpg); }
+
+#spring {
+  background-image: url(../images/story/spring_flowers.png); }
+
+#springText {
+  position: relative;
+  top: 40%; }
+
+#springText h2 {
+  color: #4c517f;
+  text-shadow: 1px 1px 20px #FFFFFF; }
+
+.summer {
+  background-image: url(../images/story/summer_bg.jpg); }
+
+#summer {
+  background-image: url(../images/story/summer_bees.png); }
+
+#summerText {
+  position: relative;
+  top: 40%; }
+
+#summerText h2 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000; }
+
+.fall {
+  background-image: url(../images/story/fall_bg.jpg); }
+
+#fall {
+  background-image: url(../images/story/fall_rain.png); }
+
+#fallText {
+  position: relative;
+  top: 40%; }
+
+#fallText h2 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000; }
+
+.winter {
+  background-image: url(../images/story/winter_bg.jpg); }
+
+#winter {
+  background-image: url(../images/story/winter_snow.png); }
+
+#winterText {
+  position: relative;
+  top: 40%; }
+
+#winterText h2 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000; }
+
+.end {
+  background-image: url(../images/story/end_bg.jpg); }
+
+#end {
+  background-image: url(../images/story/end_all.png); }
+
+#endText {
+  position: relative;
+  top: 40%; }
+
+#endText h2 {
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000; }
+
 html {
   background-color: #FFFFFF; }
 
@@ -833,8 +944,15 @@ h3 {
   font-weight: 400;
   font-size: 90%; }
 
+#distance {
+  margin-top: 10px;
+  font-size: 1.625em;
+  color: white;
+  text-shadow: 1px 1px #222222;
+  text-align: center; }
+
 #googleMap {
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 15px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,151 @@
+.sharedHeight {
+	height: $story-height;
+	background-attachment: fixed;
+	text-align: center;
+	position: relative;
+}
+
+.sharedText {
+	font-weight: 400;
+	font-size: 18pt;
+	line-height: $story-line-height;
+	@media (min-width: $mq-med){
+		font-size: 30pt;
+	}
+	@media (min-width: 1280px){
+		font-size: 40pt;
+	}
+}
+
+.intro {
+	background-image: url(../images/story/intro_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#intro {
+	background-image: url(../images/story/intro_snow1.png);
+	@extend .sharedHeight;
+}
+
+#introText {
+	position: relative;
+	top: 40%;
+}
+
+#introText h2 {
+	color: #FFFFFF;
+	text-shadow: $story-text-shadow;
+	@extend .sharedText;
+	
+
+}
+#introText p {
+	color: #FFFFFF;
+	font-weight: 400;
+	text-shadow: $story-text-shadow;
+}
+
+.spring {
+	background-image: url(../images/story/spring_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#spring {
+	background-image: url(../images/story/spring_flowers.png);
+	@extend .sharedHeight;
+}
+
+#springText {
+	position: relative;
+	top: 40%;
+}
+
+#springText h2 {
+	color: #4c517f;
+	text-shadow: 1px 1px 20px #FFFFFF;
+	@extend .sharedText;
+}
+
+.summer {
+	background-image: url(../images/story/summer_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#summer {
+	background-image: url(../images/story/summer_bees.png);
+	@extend .sharedHeight;
+}
+
+#summerText {
+	position: relative;
+	top: 40%;
+}
+
+#summerText h2 {
+	color: #FFFFFF;
+	text-shadow: $story-text-shadow;
+	@extend .sharedText;
+}
+
+.fall {
+	background-image: url(../images/story/fall_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#fall {
+	background-image: url(../images/story/fall_rain.png);
+	@extend .sharedHeight;
+}
+
+#fallText {
+	position: relative;
+	top: 40%;
+}
+
+#fallText h2 {
+	color: #FFFFFF;
+	text-shadow: $story-text-shadow;
+	@extend .sharedText;
+}
+
+.winter {
+	background-image: url(../images/story/winter_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#winter {
+	background-image: url(../images/story/winter_snow.png);
+	@extend .sharedHeight;
+}
+
+#winterText {
+	position: relative;
+	top: 40%;
+}
+
+#winterText h2 {
+	color: #FFFFFF;
+	text-shadow: $story-text-shadow;
+	@extend .sharedText;
+}
+
+.end  {
+	background-image: url(../images/story/end_bg.jpg);
+	@extend .sharedHeight;
+}
+
+#end {
+	background-image: url(../images/story/end_all.png);
+	@extend .sharedHeight;
+}
+
+#endText {
+	position: relative;
+	top: 40%;
+}
+
+#endText h2 {
+	color: #FFFFFF;
+	text-shadow: $story-text-shadow;
+	@extend .sharedText;
+}
