@@ -10,6 +10,16 @@ $(document).ready(function(){
 		$("#enterValues").toggle();
 	});
 
+	$("#menu-icon i").click(function() {
+		$("#navigation").slideToggle();	
+	});
+
+	$("#menu-icon2 i").click(function() {
+		$("#navigation").slideToggle();	
+	});
+
+	// Toogle navigation options 
+
 	function fromCityWeather (fromCity) {
 		$.getJSON(
 			 "http://api.openweathermap.org/data/2.5/forecast/daily",
@@ -207,7 +217,7 @@ $(document).ready(function(){
   			path:myTrip,
   			strokeColor:"#44567F",
   			strokeOpacity:0.8,
-  			strokeWeight:2
+  			strokeWeight:5
   		});
 
 		flightPath.setMap(map);
@@ -263,9 +273,9 @@ $(document).ready(function(){
 			}
 		);
 
-
-
 	});
+
+	
 
 
 });

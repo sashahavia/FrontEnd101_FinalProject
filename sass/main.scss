@@ -36,7 +36,16 @@ h3 {
 	font-weight: 300;
     text-rendering: optimizeLegibility;
     line-height: 1.2;
+    text-shadow: 1px 1px #222222;
+	font-size: 1.125em;
+
+	@media (min-width: $mq-large){
+		font-size: 34pt;
+		
+	}
+
 }
+
 
 .sharedButtonValues {
 	font-size: 16pt;
@@ -52,6 +61,12 @@ h3 {
 	background: rgba(255, 255, 255, 0);
 	font-weight: 300;
 	@extend .sharedButtonValues;
+
+	@media (min-width: $mq-large){
+		font-size: 24pt;
+		padding: 20px 20px 20px 20px;
+		border-radius: 10px;
+	}
 }
 
 
@@ -87,6 +102,14 @@ h3 {
     @media (min-width: $mq-small){
 		left: 10%;
 	}
+
+	@media (min-width: $mq-large){
+		font-size: 30pt;
+		top: 45%;
+		left: 15%;
+	}
+
+
 }
 
 #values label {
@@ -115,7 +138,7 @@ h3 {
 #result {
 	display: none;
 	height: 100vh;
-	background-image:	url(../images/values_bg_sm.jpg);
+	background-image:	url(../images/slider2_bg_sm.jpg);
 
 	@media (min-width: $mq-med){
 	 		background: url(../images/slider2_bg.jpg) no-repeat center center fixed;
@@ -126,8 +149,40 @@ h3 {
 			background-size: cover;
 	 	}
 }
+// result navigation
+
+#navigation {
+	display: none;
+	z-index: 1000;
+}
+#navigation ul {
+	background: rgba( 68, 86, 127, 0.5);
+}
+
+#navigation li {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+#navigation a{
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 1px 1px #222222;
+	text-transform: uppercase;
+}
+
+#menu-icon {
+	z-index: 1002;
+	width: 1.875em;
+	height: 1.875em;
+	color: #FFFFFF;
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
 
 // Styling the weather results
+
 
 #toCity h2, 
 #fromCity h2 {
@@ -137,6 +192,10 @@ h3 {
 	font-weight: 400;
 	text-shadow: 1px 1px #222222;
 	margin-bottom: 10px;
+
+	@media (min-width: $mq-large){
+		font-size: 30pt;
+	}
 }
 
 .icon0, .icon1, .icon2,
@@ -167,8 +226,15 @@ h3 {
 }
 
 #googleMap {
+	width: 100vw;
+	height: 380px;
 	margin-top: 10px;
 	border-radius: 15px;
+
+	@media (min-width: $mq-large){
+		height: 550px;
+	}
+
 }
 
 // Settings fixed position

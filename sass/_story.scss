@@ -12,7 +12,7 @@
 	@media (min-width: $mq-med){
 		font-size: 30pt;
 	}
-	@media (min-width: 1280px){
+	@media (min-width: $mq-large){
 		font-size: 40pt;
 	}
 }

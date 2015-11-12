@@ -739,7 +739,7 @@ footer {
   @media (min-width: 58em) {
     .sharedText, #introText h2, #springText h2, #summerText h2, #fallText h2, #winterText h2, #endText h2 {
       font-size: 30pt; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 86em) {
     .sharedText, #introText h2, #springText h2, #summerText h2, #fallText h2, #winterText h2, #endText h2 {
       font-size: 40pt; } }
 
@@ -844,7 +844,12 @@ h3 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-rendering: optimizeLegibility;
-  line-height: 1.2; }
+  line-height: 1.2;
+  text-shadow: 1px 1px #222222;
+  font-size: 1.125em; }
+  @media (min-width: 86em) {
+    h3 {
+      font-size: 34pt; } }
 
 .sharedButtonValues, #start, #values button {
   font-size: 16pt;
@@ -858,6 +863,11 @@ h3 {
   margin-top: 40px;
   background: rgba(255, 255, 255, 0);
   font-weight: 300; }
+  @media (min-width: 86em) {
+    #start {
+      font-size: 24pt;
+      padding: 20px 20px 20px 20px;
+      border-radius: 10px; } }
 
 #enterValues {
   display: none; }
@@ -886,6 +896,11 @@ h3 {
   @media (min-width: 36em) {
     #values {
       left: 10%; } }
+  @media (min-width: 86em) {
+    #values {
+      font-size: 30pt;
+      top: 45%;
+      left: 15%; } }
 
 #values label {
   color: white;
@@ -909,7 +924,7 @@ h3 {
 #result {
   display: none;
   height: 100vh;
-  background-image: url(../images/values_bg_sm.jpg); }
+  background-image: url(../images/slider2_bg_sm.jpg); }
   @media (min-width: 58em) {
     #result {
       background: url(../images/slider2_bg.jpg) no-repeat center center fixed;
@@ -919,6 +934,32 @@ h3 {
       -o-background-size: cover;
       background-size: cover; } }
 
+#navigation {
+  display: none;
+  z-index: 1000; }
+
+#navigation ul {
+  background: rgba(68, 86, 127, 0.5); }
+
+#navigation li {
+  display: inline-block;
+  padding: 10px 20px; }
+
+#navigation a {
+  color: white;
+  text-shadow: 1px 1px #222222;
+  text-transform: uppercase; }
+
+#menu-icon {
+  z-index: 1002;
+  width: 1.875em;
+  height: 1.875em;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0; }
+
 #toCity h2,
 #fromCity h2 {
   text-align: center;
@@ -927,6 +968,10 @@ h3 {
   font-weight: 400;
   text-shadow: 1px 1px #222222;
   margin-bottom: 10px; }
+  @media (min-width: 86em) {
+    #toCity h2,
+    #fromCity h2 {
+      font-size: 30pt; } }
 
 .icon0, .icon1, .icon2,
 .icon3, .icon4, .icon5,
@@ -952,7 +997,12 @@ h3 {
   text-align: center; }
 
 #googleMap {
+  width: 100vw;
+  height: 380px;
   margin-top: 10px;
   border-radius: 15px; }
+  @media (min-width: 86em) {
+    #googleMap {
+      height: 550px; } }
 
 /*# sourceMappingURL=main.css.map */
