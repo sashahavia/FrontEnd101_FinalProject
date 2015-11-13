@@ -90,16 +90,26 @@ h3 {
 }
 
 #values {
+	width: 430px;
+	height: 180px;
 	padding: 10px;
 	background: rgba(0, 0, 0, 0.6);
 	border: solid 1px #999999;
 	border-radius: 10px;
 	font-size: 20pt;
 	position:fixed;
-	top: 40%;
-	left: 0;
-
-    @media (min-width: $mq-small){
+	top: 30%;
+	left: 5%;
+	
+	@media (min-width: $mq-small){
+		width: 450px;
+		left: 25%;
+	}
+	@media (min-width: $mq-medium){	
+		width: auto;
+		height: auto;
+		position:fixed;
+		top: 40%;
 		left: 10%;
 	}
 
@@ -108,8 +118,6 @@ h3 {
 		top: 45%;
 		left: 15%;
 	}
-
-
 }
 
 #values label {
@@ -123,7 +131,7 @@ h3 {
 	cursor:auto;
 	font-weight: 300;
 	@media (min-width: $mq-small){
-		float: none;
+		
 	}
 }
 
@@ -132,7 +140,20 @@ h3 {
 	text-shadow: 1px 1px #222222;
 	font-weight: 300;
 	background: rgba(255, 255, 255, 0);
+	margin-left: 25%;
 	@extend .sharedButtonValues;
+	@media (min-width: $mq-medium){
+		margin-left: 0%;
+	}
+}
+
+#valuesFromCity, 
+#valuesToCity, 
+#valuesButton {
+	display: block;
+	@media (min-width: $mq-medium){
+		display: inline-block;
+	}
 }
 
 #result {

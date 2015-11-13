@@ -189,6 +189,7 @@ $(document).ready(function(){
 
 	  	var result = 7918 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 	  	$("#distance").html("Your travel distance is " + result.toFixed(2) + " miles.");
+	  	return result;
 	}
 
 	// set map values based on weather API data
@@ -198,16 +199,27 @@ $(document).ready(function(){
 		console.log(toLon + " " + toLat);
 		var from = new google.maps.LatLng(fromLat,fromLon);
 		var to = new google.maps.LatLng(toLat, toLon);
-		distance(fromLat,fromLon, toLat, toLon);
-		initialize(from , to);
+		var d = distance(fromLat,fromLon, toLat, toLon);
+		console.log("d = " + d);
+		if ( d < 500){
+			d = 6;
+		} else if ( d < 1000 ){
+			d = 5;
+		} else if (d < 4000 ){
+			d = 3;
+		} else {
+			d = 2;
+		}
+		initialize(from , to, d);
+
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 	// map function
-	function initialize(fromC, toC) {
+	function initialize(fromC, toC, x) {
 		
 		var mapProp = {
 			center: fromC,
-		  	zoom: 4,
+		  	zoom: x,
 		  	mapTypeId:google.maps.MapTypeId.ROADMAP
 		};
   
@@ -250,7 +262,6 @@ $(document).ready(function(){
 				console.log(fromLon);
 				// if tCoord has already been initialized
 				if(toLat & toLon) {
-					google.maps.event.addDomListener(window, 'load', initialize);
                     setMapPoints (fromLon,fromLat, toLon, toLat);
                 }
 				
@@ -267,7 +278,7 @@ $(document).ready(function(){
 				toLon = data.city.coord.lon;
 				toLat = data.city.coord.lat;
 				console.log(toLon);
-				if(fromLat & fromLon) {
+				if(fromLat & fromLon ) {
                     setMapPoints (fromLon,fromLat, toLon, toLat);
                 }
 			}

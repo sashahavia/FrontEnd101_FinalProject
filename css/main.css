@@ -933,16 +933,26 @@ h3 {
       background-size: cover; } }
 
 #values {
+  width: 430px;
+  height: 180px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.6);
   border: solid 1px #999999;
   border-radius: 10px;
   font-size: 20pt;
   position: fixed;
-  top: 40%;
-  left: 0; }
+  top: 30%;
+  left: 5%; }
   @media (min-width: 36em) {
     #values {
+      width: 450px;
+      left: 25%; } }
+  @media (min-width: 75em) {
+    #values {
+      width: auto;
+      height: auto;
+      position: fixed;
+      top: 40%;
       left: 10%; } }
   @media (min-width: 86em) {
     #values {
@@ -959,15 +969,26 @@ h3 {
   float: right;
   cursor: auto;
   font-weight: 300; }
-  @media (min-width: 36em) {
-    #values input {
-      float: none; } }
 
 #values button {
   margin-top: 0;
   text-shadow: 1px 1px #222222;
   font-weight: 300;
-  background: rgba(255, 255, 255, 0); }
+  background: rgba(255, 255, 255, 0);
+  margin-left: 25%; }
+  @media (min-width: 75em) {
+    #values button {
+      margin-left: 0%; } }
+
+#valuesFromCity,
+#valuesToCity,
+#valuesButton {
+  display: block; }
+  @media (min-width: 75em) {
+    #valuesFromCity,
+    #valuesToCity,
+    #valuesButton {
+      display: inline-block; } }
 
 #result {
   display: none;
