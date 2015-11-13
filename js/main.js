@@ -201,7 +201,9 @@ $(document).ready(function(){
 		var to = new google.maps.LatLng(toLat, toLon);
 		var d = distance(fromLat,fromLon, toLat, toLon);
 		console.log("d = " + d);
-		if ( d < 500){
+		if ( d < 100){
+			d = 8;
+		}else if ( d < 500){
 			d = 6;
 		} else if ( d < 1000 ){
 			d = 5;
