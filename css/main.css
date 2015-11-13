@@ -745,9 +745,17 @@ footer {
 
 .intro {
   background-image: url(../images/story/intro_bg.jpg); }
+  @media (min-width: 86em) {
+    .intro {
+      background-image: url(../images/story/intro_bg_lg.jpg);
+      height: 1080px; } }
 
 #intro {
   background-image: url(../images/story/intro_snow1.png); }
+  @media (min-width: 86em) {
+    #intro {
+      background-image: url(../images/story/intro_snow2_lg.png);
+      height: 1080px; } }
 
 #introText {
   position: relative;
@@ -764,9 +772,17 @@ footer {
 
 .spring {
   background-image: url(../images/story/spring_bg.jpg); }
+  @media (min-width: 86em) {
+    .spring {
+      background-image: url(../images/story/spring_bg_lg.jpg);
+      height: 1080px; } }
 
 #spring {
   background-image: url(../images/story/spring_flowers.png); }
+  @media (min-width: 86em) {
+    #spring {
+      background-image: url(../images/story/spring_flowers_lg.png);
+      height: 1080px; } }
 
 #springText {
   position: relative;
@@ -778,9 +794,17 @@ footer {
 
 .summer {
   background-image: url(../images/story/summer_bg.jpg); }
+  @media (min-width: 86em) {
+    .summer {
+      background-image: url(../images/story/summer_bg_lg.jpg);
+      height: 1080px; } }
 
 #summer {
   background-image: url(../images/story/summer_bees.png); }
+  @media (min-width: 86em) {
+    #summer {
+      background-image: url(../images/story/summer_bees_lg.png);
+      height: 1080px; } }
 
 #summerText {
   position: relative;
@@ -792,9 +816,17 @@ footer {
 
 .fall {
   background-image: url(../images/story/fall_bg.jpg); }
+  @media (min-width: 86em) {
+    .fall {
+      background-image: url(../images/story/fall_bg_lg.jpg);
+      height: 1080px; } }
 
 #fall {
   background-image: url(../images/story/fall_rain.png); }
+  @media (min-width: 86em) {
+    #fall {
+      background-image: url(../images/story/fall_rain_lg.png);
+      height: 1080px; } }
 
 #fallText {
   position: relative;
@@ -806,9 +838,17 @@ footer {
 
 .winter {
   background-image: url(../images/story/winter_bg.jpg); }
+  @media (min-width: 86em) {
+    .winter {
+      background-image: url(../images/story/winter_bg_lg.jpg);
+      height: 1080px; } }
 
 #winter {
   background-image: url(../images/story/winter_snow.png); }
+  @media (min-width: 86em) {
+    #winter {
+      background-image: url(../images/story/winter_snow_lg.png);
+      height: 1080px; } }
 
 #winterText {
   position: relative;
@@ -820,9 +860,17 @@ footer {
 
 .end {
   background-image: url(../images/story/end_bg.jpg); }
+  @media (min-width: 86em) {
+    .end {
+      background-image: url(../images/story/end_bg_lg.jpg);
+      height: 1080px; } }
 
 #end {
   background-image: url(../images/story/end_all.png); }
+  @media (min-width: 86em) {
+    #end {
+      background-image: url(../images/story/end_all_lg.png);
+      height: 1080px; } }
 
 #endText {
   position: relative;
@@ -936,6 +984,7 @@ h3 {
 
 #navigation {
   display: none;
+  position: relative;
   z-index: 1000; }
 
 #navigation ul {
@@ -946,6 +995,20 @@ h3 {
   padding: 10px 20px; }
 
 #navigation a {
+  color: white;
+  text-shadow: 1px 1px #222222;
+  text-transform: uppercase; }
+
+#navigation2 {
+  display: none;
+  position: fixed;
+  z-index: 1000; }
+
+#navigation2 li {
+  display: inline-block;
+  padding: 10px 20px; }
+
+#navigation2 a {
   color: white;
   text-shadow: 1px 1px #222222;
   text-transform: uppercase; }

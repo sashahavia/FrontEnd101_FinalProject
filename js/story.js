@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.stellar();
 
-	$("#menu-icon2 i").click(function() {
+	$("#menu-icon i").click(function() {
 		$("#navigation2").slideToggle();	
 	});
 

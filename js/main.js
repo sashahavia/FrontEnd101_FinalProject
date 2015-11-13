@@ -200,6 +200,7 @@ $(document).ready(function(){
 		var to = new google.maps.LatLng(toLat, toLon);
 		distance(fromLat,fromLon, toLat, toLon);
 		initialize(from , to);
+		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 	// map function
 	function initialize(fromC, toC) {
@@ -238,14 +239,14 @@ $(document).ready(function(){
 		var tCoord;
 
 		$.getJSON(
-			"http://api.openweathermap.org/data/2.5/weather",
+			"http://api.openweathermap.org/data/2.5/forecast/daily",
 			{
 				q: fromCity,
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 			},
 			function(data){
-				fromLon = data.coord.lon;
-				fromLat = data.coord.lat;
+				fromLon = data.city.coord.lon;
+				fromLat = data.city.coord.lat;
 				console.log(fromLon);
 				// if tCoord has already been initialized
 				if(toLat & toLon) {
@@ -257,18 +258,17 @@ $(document).ready(function(){
 		);
 
 		$.getJSON(
-			"http://api.openweathermap.org/data/2.5/weather",
+			"http://api.openweathermap.org/data/2.5/forecast/daily",
 			{
 				q: toCity,
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 			},
 			function(data){
-				toLon = data.coord.lon;
-				toLat = data.coord.lat;
+				toLon = data.city.coord.lon;
+				toLat = data.city.coord.lat;
 				console.log(toLon);
 				if(fromLat & fromLon) {
                     setMapPoints (fromLon,fromLat, toLon, toLat);
-                    google.maps.event.addDomListener(window, 'load', initialize);
                 }
 			}
 		);

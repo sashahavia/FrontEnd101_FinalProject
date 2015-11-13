@@ -153,6 +153,7 @@ h3 {
 
 #navigation {
 	display: none;
+	position: relative;
 	z-index: 1000;
 }
 #navigation ul {
@@ -165,6 +166,25 @@ h3 {
 }
 
 #navigation a{
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 1px 1px #222222;
+	text-transform: uppercase;
+}
+
+#navigation2 {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+}
+#navigation2 ul {
+}
+
+#navigation2 li {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+#navigation2 a{
 	color: rgba(255, 255, 255, 1);
 	text-shadow: 1px 1px #222222;
 	text-transform: uppercase;

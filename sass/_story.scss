@@ -20,11 +20,19 @@
 .intro {
 	background-image: url(../images/story/intro_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/intro_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #intro {
 	background-image: url(../images/story/intro_snow1.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/intro_snow2_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #introText {
@@ -48,11 +56,19 @@
 .spring {
 	background-image: url(../images/story/spring_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/spring_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #spring {
 	background-image: url(../images/story/spring_flowers.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/spring_flowers_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #springText {
@@ -69,11 +85,19 @@
 .summer {
 	background-image: url(../images/story/summer_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/summer_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #summer {
 	background-image: url(../images/story/summer_bees.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/summer_bees_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #summerText {
@@ -90,11 +114,19 @@
 .fall {
 	background-image: url(../images/story/fall_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/fall_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #fall {
 	background-image: url(../images/story/fall_rain.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/fall_rain_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #fallText {
@@ -111,11 +143,19 @@
 .winter {
 	background-image: url(../images/story/winter_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/winter_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #winter {
 	background-image: url(../images/story/winter_snow.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/winter_snow_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #winterText {
@@ -132,11 +172,19 @@
 .end  {
 	background-image: url(../images/story/end_bg.jpg);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/end_bg_lg.jpg);
+		height: $story-height-lg;
+	}
 }
 
 #end {
 	background-image: url(../images/story/end_all.png);
 	@extend .sharedHeight;
+	@media (min-width: $mq-large){
+		background-image: url(../images/story/end_all_lg.png);
+		height: $story-height-lg;
+	}
 }
 
 #endText {
