@@ -259,11 +259,14 @@ $(document).ready(function(){
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 			},
 			function(data){
+				if(data.cod != 200){
+                    alert(data.message);
+                }
 				fromLon = data.city.coord.lon;
 				fromLat = data.city.coord.lat;
 				console.log(fromLon);
 				// if tCoord has already been initialized
-				if(toLat & toLon) {
+				if((toLat) & (toLon)) {
                     setMapPoints (fromLon,fromLat, toLon, toLat);
                 }
 				
@@ -277,10 +280,13 @@ $(document).ready(function(){
 				appid: "4222d4e937e261a81e1d84fa1e3f669c",
 			},
 			function(data){
+				if(data.cod != 200){
+                    alert(data.message);
+                }
 				toLon = data.city.coord.lon;
 				toLat = data.city.coord.lat;
 				console.log(toLon);
-				if(fromLat & fromLon ) {
+				if((fromLat) & (fromLon) ) {
                     setMapPoints (fromLon,fromLat, toLon, toLat);
                 }
 			}
